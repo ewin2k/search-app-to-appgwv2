@@ -45,8 +45,9 @@ jobs:
 
         - name: Ask for App Code
           run: |
-            read -p "Enter App Code: " app_code
-
+            #read -p "Enter App Code: " app_code
+            app_code = "qwer"
+          
         - name: Match App Code with Backend Pool
           run: |
             gateways=$(az network application-gateway list --subscription "${{ secrets.AZURE_SUBSCRIPTION_ID }}" --query '[].name' -o tsv)
