@@ -46,7 +46,7 @@ jobs:
         - name: Ask for App Code
           run: |
             #read -p "Enter App Code: " app_code
-            app_code = "qwer"
+            $app_code = "qwer"
           
         - name: Match App Code with Backend Pool
           run: |
