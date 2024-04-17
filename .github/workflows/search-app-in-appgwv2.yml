@@ -25,7 +25,7 @@ jobs:
             resource_groups=$(az network application-gateway list --subscription "${{ secrets.AZURE_SUBSCRIPTION_ID }}" --query '[].resourceGroup' -o tsv)
                 
             for gateway in $gateways; do
-                for resource_group in $resource_group; do
+                for resource_group in $resource_groups; do
                     echo "Backend Pool Names for $gateway:"
                     az network application-gateway show --name $gateway --resource-group $resource_group --subscription "${{ secrets.AZURE_SUBSCRIPTION_ID }}" --query 'backendAddressPools[].name' -o tsv
                     echo
