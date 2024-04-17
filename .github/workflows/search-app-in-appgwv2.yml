@@ -2,7 +2,7 @@ name: List Application Gateways
 
 on:
     workflow_dispatch:
-    # push:
+    push:
     #     branches:
     #         - main
 
@@ -16,4 +16,4 @@ jobs:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
 
         - name: List Application Gateways
-          run: az network application-gateway list --subscription "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+          run: az network application-gateway list --subscription "${{ secrets.AZURE_SUBSCRIPTION_ID }}" --query '[].name' -o tsv
