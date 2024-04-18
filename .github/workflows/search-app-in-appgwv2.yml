@@ -50,7 +50,7 @@ jobs:
           
         - name: Match App Code with Backend Pool
           run: |
-            app_code="asdf"
+            app_code="zxcv"
             gateways=$(az network application-gateway list --subscription "${{ secrets.AZURE_SUBSCRIPTION_ID }}" --query '[].name' -o tsv)
             resource_groups=$(az network application-gateway list --subscription "${{ secrets.AZURE_SUBSCRIPTION_ID }}" --query '[].resourceGroup' -o tsv)
             
